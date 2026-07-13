@@ -1,0 +1,8 @@
+# Merge-friendly defaults for the static site.
+# These files are plain text and are mostly additive/generated content pages.
+# Use Git's built-in union merge to avoid blocking PRs on non-overlapping page edits.
+*.html merge=union
+*.css merge=union
+*.js merge=union
+*.svg text eol=lf
+*.md text eol=lf
