@@ -1,0 +1,8 @@
+# Static site files are plain text.
+# Do not use union merges for HTML/CSS/JS: union can silently keep both old
+# and new versions in the same file during conflicts, creating duplicated pages.
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.svg text eol=lf
+*.md text eol=lf
