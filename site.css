@@ -90,6 +90,27 @@
         }
         a {
             text-decoration: none;
+             PRINT STYLES
+             ================================================================ */
+        
+         /* Print styles: make pages print-friendly and hide navigation, controls */
+         @media print {
+           :root { color-scheme: light; }
+           body { background: #ffffff !important; color: #000000 !important; }
+           header, .utility-bar, .nav-overlay, .sub-nav, .page-actions, .btn-primary, .btn-outline-dark, .header .controls, .nav-overlay.open, .footer-dark, .hamburger, .theme-toggle { display: none !important; }
+           .container { max-width: 100% !important; padding: 0.5in !important; }
+           .detail-card { border: none !important; padding: 0 !important; box-shadow: none !important; }
+           .display-xl, .display-lg, .heading-xl, .heading-lg, .heading-md { color: #000 !important; }
+           a::after { content: " (" attr(href) ")"; font-size: 90%; }
+           img { break-inside: avoid; max-width: 100% !important; }
+           pre, code { white-space: pre-wrap; word-break: break-word; }
+           .grid-2, .grid-3 { display: block !important; }
+           .detail-card + .detail-card { page-break-before: avoid; }
+           h1, h2, h3, h4 { break-after: avoid; page-break-inside: avoid; }
+           hr { border: none; border-top: 1px solid #222; margin: 12px 0; }
+           .muted { color: #444 !important; }
+         }
+
             color: inherit;
         }
         ul {
