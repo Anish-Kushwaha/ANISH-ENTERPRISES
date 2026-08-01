@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — ANISH ENTERPRISES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ================================================================
+           BASE THEME VARIABLES
+           ================================================================ */
+        :root {
+            --primary: #0052ff;
+            --primary-dark: #003ecc;
+            --secondary: #cf202f;
+            --secondary-dark: #a01926;
+            --accent-gold: #f4b000;
+            --accent-cyan: #00bcd4;
+            --ink: #000000;
+            --canvas: #ffffff;
+            --surface-soft: #f7f7f7;
+            --surface-elevated: #1a1a1a;
+            --hairline: #cccccc;
+            --hairline-strong: #5e5e5e;
+            --body: #1a1a1a;
+            --mute: #757575;
+            --on-dark: #ffffff;
+            --on-dark-mute: rgba(255, 255, 255, 0.85);
+            --gold-gradient: linear-gradient(135deg, #f4b000, #f7c948, #d49a00);
+            --primary-gradient: linear-gradient(135deg, #0052ff, #4d8aff);
+            --shadow-premium: 0 20px 60px rgba(0, 82, 255, 0.10), 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        body.dark-mode {
+            --primary: #4d8aff;
+            --primary-dark: #3a6fd6;
+            --secondary: #e53e4e;
+            --secondary-dark: #b52a38;
+            --accent-gold: #f7c948;
+            --accent-cyan: #4dd0e1;
+            --ink: #ffffff;
+            --canvas: #0a0b0d;
+            --surface-soft: #1a1c22;
+            --surface-elevated: #2a2e36;
+            --hairline: #3a3f48;
+            --hairline-strong: #5a606c;
+            --body: #d0d4dc;
+            --mute: #9aa0aa;
+            --on-dark: #ffffff;
+            --on-dark-mute: rgba(255, 255, 255, 0.85);
+            --shadow-premium: 0 20px 60px rgba(77, 138, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body:not(.light-mode):not(.dark-mode) {
+                --primary: #4d8aff;
+                --primary-dark: #3a6fd6;
+                --secondary: #e53e4e;
+                --secondary-dark: #b52a38;
+                --accent-gold: #f7c948;
+                --accent-cyan: #4dd0e1;
+                --ink: #ffffff;
+                --canvas: #0a0b0d;
+                --surface-soft: #1a1c22;
+                --surface-elevated: #2a2e36;
+                --hairline: #3a3f48;
+                --hairline-strong: #5a606c;
+                --body: #d0d4dc;
+                --mute: #9aa0aa;
+                --on-dark: #ffffff;
+                --on-dark-mute: rgba(255, 255, 255, 0.85);
+                --shadow-premium: 0 20px 60px rgba(77, 138, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        /* ================================================================
+           RESET & BASE
+           ================================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: var(--canvas);
+            color: var(--ink);
+            line-height: 1.5;
+            transition: background 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ================================================================
+           TYPOGRAPHY
+           ================================================================ */
+        .display-xl {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .display-lg {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .heading-xl {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .heading-lg {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.75;
+        }
+        .heading-md {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .heading-sm {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .card-title {
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.47;
+        }
+        .body-md {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        .body-sm {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.67;
+        }
+        .utility-xs {
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        /* ================================================================
+           COMPONENTS
+           ================================================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 11px 24px;
+            height: 44px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            min-width: 100px;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .btn-outline-dark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 11px 13px;
+            height: 44px;
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, transform 0.15s;
+            min-width: 100px;
+        }
+        .btn-outline-dark:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-ghost-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--primary);
+            font-size: 16px;
+            font-weight: 700;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+        .btn-ghost-link:hover {
+            color: var(--primary-dark);
+        }
+        .btn-ghost-link i {
+            font-size: 14px;
+        }
+
+        /* Corner squares */
+        .corner-top-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 0;
+            z-index: 1;
+        }
+        .corner-red::before {
+            background: var(--secondary);
+        }
+        .corner-gold::before {
+            background: var(--accent-gold);
+        }
+        .corner-cyan::before {
+            background: var(--accent-cyan);
+        }
+        .corner-bottom-right::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 0;
+            z-index: 1;
+        }
+
+        /* Cards */
+        .product-card,
+        .feature-card {
+            background: var(--canvas);
+            border: 1px solid var(--hairline);
+            border-radius: 2px;
+            padding: 24px;
+            transition: border-color 0.2s, background 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-card:hover,
+        .feature-card:hover {
+            border-color: var(--primary);
+        }
+        .product-card .card-img {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 2px;
+            background: var(--surface-soft);
+            margin-bottom: 12px;
+        }
+        .product-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-card .card-title {
+            margin-bottom: 4px;
+        }
+        .product-card .body-sm {
+            color: var(--body);
+            margin-bottom: 12px;
+        }
+        .feature-card .feature-icon {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .feature-card .heading-md {
+            margin-bottom: 4px;
+        }
+        .feature-card .body-md {
+            color: var(--body);
+        }
+
+        /* Hero dark */
+        .hero-dark {
+            background: #000000;
+            color: #ffffff;
+            padding: 80px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-dark .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%),
+                url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600&q=80') center center / cover no-repeat;
+            z-index: 0;
+        }
+        .hero-dark .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .hero-dark .hero-text {
+            flex: 1;
+            max-width: 560px;
+        }
+        .hero-dark .hero-text .display-xl {
+            margin-bottom: 16px;
+        }
+        .hero-dark .hero-text .heading-lg {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        .hero-dark .hero-text .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .hero-dark .hero-media {
+            flex: 1;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            background: #1a1a1a;
+        }
+        .hero-dark .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CTA dark */
+        .cta-dark {
+            background: #000000;
+            color: #ffffff;
+            padding: 64px 48px;
+            text-align: center;
+        }
+        .cta-dark .heading-xl {
+            margin-bottom: 16px;
+        }
+        .cta-dark .body-md {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Utility bar */
+        .utility-bar {
+            background: #000000;
+            color: #ffffff;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 24px;
+            font-size: 12px;
+            font-weight: 400;
+            border-bottom: 1px solid #5e5e5e;
+        }
+        .utility-bar .util-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .utility-bar .util-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.2s;
+        }
+        .utility-bar .util-links a:hover {
+            color: #ffffff;
+        }
+        .utility-bar .util-links .divider {
+            color: #5e5e5e;
+        }
+
+        /* Header */
+        .header {
+            background: var(--canvas);
+            border-bottom: 1px solid var(--hairline);
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .header .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .header .brand i {
+            font-size: 28px;
+            color: var(--primary);
+        }
+        .header .brand .highlight {
+            color: var(--primary);
+        }
+        .header .brand .highlight-red {
+            color: var(--secondary);
+        }
+        .header .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header .controls .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--ink);
+            font-size: 22px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 2px;
+            transition: background 0.2s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header .controls .theme-toggle:hover {
+            background: var(--surface-soft);
+        }
+        .header .controls .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+        .header .controls .hamburger:hover {
+            background: var(--surface-soft);
+        }
+        .header .controls .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--ink);
+            border-radius: 2px;
+            transition: 0.2s;
+        }
+
+        /* Navigation overlay */
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--canvas);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        body.dark-mode .nav-overlay,
+        body:not(.light-mode):not(.dark-mode) .nav-overlay {
+            background: rgba(10, 11, 13, 0.95);
+        }
+        .nav-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .nav-overlay .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .nav-overlay .nav-links a {
+            transition: color 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav-overlay .nav-links a:hover {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .nav-overlay .close-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 32px;
+            background: transparent;
+            border: none;
+            color: var(--ink);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Sub-nav */
+        .sub-nav {
+            background: var(--surface-soft);
+            color: var(--ink);
+            height: 48px;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            border-bottom: 1px solid var(--hairline);
+            overflow-x: auto;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .sub-nav .sub-inner {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .sub-nav .sub-inner a {
+            color: var(--mute);
+            white-space: nowrap;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .sub-nav .sub-inner a:hover {
+            border-bottom-color: var(--primary);
+            color: var(--ink);
+        }
+        .sub-nav .sub-inner a.active {
+            border-bottom-color: var(--primary);
+            color: var(--ink);
+        }
+        .sub-nav::-webkit-scrollbar {
+            height: 0;
+        }
+
+        /* --- FOOTER — ALWAYS VISIBLE --- */
+        .footer-dark {
+            background: #0a0b0d;
+            color: #ffffff;
+            padding: 64px 48px;
+            border-top: 2px solid var(--primary);
+            margin-top: auto;
+            display: block;
+            width: 100%;
+        }
+        .footer-dark .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        .footer-dark .footer-col .heading-sm {
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .footer-dark .footer-col a {
+            display: block;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.67;
+            padding: 2px 0;
+            transition: color 0.2s;
+        }
+        .footer-dark .footer-col a:hover {
+            color: #ffffff;
+        }
+        .footer-dark .footer-bottom {
+            max-width: 1280px;
+            margin: 32px auto 0;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-dark .footer-bottom .utility-xs {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .footer-dark .footer-bottom .socials {
+            display: flex;
+            gap: 24px;
+        }
+        .footer-dark .footer-bottom .socials a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+        .footer-dark .footer-bottom .socials a:hover {
+            color: #ffffff;
+        }
+
+        /* ================================================================
+           CONTACT-SPECIFIC STYLES
+           ================================================================ */
+
+        /* ---- SECTION HEADERS WITH BOUNDARY COLORS ---- */
+        .section-header {
+            position: relative;
+            padding-bottom: 16px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+        .section-header.gold::after {
+            background: var(--gold-gradient);
+        }
+        .section-header.red::after {
+            background: var(--secondary);
+        }
+        .section-header.cyan::after {
+            background: var(--accent-cyan);
+        }
+        .section-header .subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--mute);
+            margin-top: 4px;
+        }
+
+        /* ---- TEAM CARD ---- */
+        .team-card {
+            background: var(--canvas);
+            border: 1px solid var(--hairline);
+            border-radius: 2px;
+            padding: 24px 20px;
+            transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+        }
+        .team-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 82, 255, 0.06);
+        }
+        .team-card .team-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--surface-soft);
+            border: 3px solid var(--hairline);
+            transition: border-color 0.25s, box-shadow 0.25s;
+            margin-bottom: 2px;
+        }
+        .team-card:hover .team-photo {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 82, 255, 0.08);
+        }
+        .team-card .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .team-card .team-photo .initials {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            background: var(--primary);
+        }
+        .team-card .team-name {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 4px;
+        }
+        .team-card .team-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .team-card .team-bio {
+            font-size: 14px;
+            color: var(--body);
+            line-height: 1.6;
+            margin-top: 4px;
+            max-width: 320px;
+        }
+        .team-card .team-link {
+            margin-top: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.2s;
+        }
+        .team-card .team-link i {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+        .team-card:hover .team-link i {
+            transform: translateX(4px);
+        }
+        .team-card .corner-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 40px 40px 0;
+            border-color: transparent var(--primary) transparent transparent;
+            opacity: 0.5;
+        }
+        .team-card .corner-badge.gold {
+            border-color: transparent var(--accent-gold) transparent transparent;
+        }
+        .team-card .corner-badge.cyan {
+            border-color: transparent var(--accent-cyan) transparent transparent;
+        }
+        .team-card .corner-badge.red {
+            border-color: transparent var(--secondary) transparent transparent;
+        }
+
+        /* ---- FOUNDER PREMIUM ---- */
+        .founder-premium {
+            background: var(--canvas);
+            border: 2px solid var(--primary);
+            border-radius: 3px;
+            padding: 48px 56px;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.4s, transform 0.3s;
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            box-shadow: var(--shadow-premium);
+        }
+        .founder-premium:hover {
+            box-shadow: 0 24px 72px rgba(0, 82, 255, 0.12), 0 8px 24px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+        /* Premium glow ring */
+        .founder-premium::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(244, 176, 0, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .founder-premium::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-gradient);
+            z-index: 1;
+        }
+        /* Decorative top-right star */
+        .founder-premium .premium-star {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 22px;
+            color: var(--accent-gold);
+            opacity: 0.4;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+        /* Decorative border accent lines */
+        .founder-premium .border-accent {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.15;
+        }
+        .founder-premium .border-accent.tl {
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border-top: 2px solid var(--primary);
+            border-left: 2px solid var(--primary);
+        }
+        .founder-premium .border-accent.br {
+            bottom: 4px;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            border-bottom: 2px solid var(--primary);
+            border-right: 2px solid var(--primary);
+        }
+
+        .founder-premium .founder-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 4px solid var(--primary);
+            background: var(--surface-soft);
+            position: relative;
+            z-index: 1;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 0 6px rgba(0, 82, 255, 0.06);
+        }
+        .founder-premium:hover .founder-photo {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 8px rgba(244, 176, 0, 0.10);
+        }
+        .founder-premium .founder-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .founder-premium .founder-photo .initials {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            background: var(--primary);
+        }
+
+        .founder-premium .founder-info {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        .founder-premium .founder-info .founder-name {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 2px;
+            letter-spacing: -0.5px;
+        }
+        .founder-premium .founder-info .founder-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+        .founder-premium .founder-info .founder-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gold-gradient);
+            color: #000000;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 16px;
+            border-radius: 20px;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+            border: none;
+        }
+        .founder-premium .founder-info .founder-badge i {
+            font-size: 10px;
+        }
+        .founder-premium .founder-info .founder-bio {
+            font-size: 15.5px;
+            line-height: 1.75;
+            color: var(--body);
+            max-width: 660px;
+        }
+        .founder-premium .founder-info .founder-actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .founder-premium .founder-info .founder-actions .btn-premium {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 10px 28px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+        }
+        .founder-premium .founder-info .founder-actions .btn-premium:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 4px 16px rgba(0, 82, 255, 0.25);
+            transform: translateY(-1px);
+        }
+        .founder-premium .founder-info .founder-actions .btn-premium i {
+            font-size: 13px;
+        }
+        .founder-premium .founder-info .founder-actions .btn-outline-premium {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 1.5px solid var(--hairline-strong);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+        .founder-premium .founder-info .founder-actions .btn-outline-premium:hover {
+            border-color: var(--primary);
+            background: rgba(0, 82, 255, 0.04);
+        }
+        .founder-premium .founder-info .founder-actions .btn-outline-premium i {
+            font-size: 13px;
+        }
+
+        /* ---- GRID ---- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .founder-premium {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 28px;
+                gap: 24px;
+            }
+            .founder-premium .founder-info .founder-actions {
+                justify-content: center;
+            }
+            .founder-premium .founder-photo {
+                width: 140px;
+                height: 140px;
+            }
+        }
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .founder-premium {
+                padding: 24px 16px;
+                gap: 20px;
+            }
+            .founder-premium .founder-photo {
+                width: 120px;
+                height: 120px;
+            }
+            .founder-premium .founder-info .founder-name {
+                font-size: 26px;
+            }
+            .founder-premium .founder-info .founder-title {
+                font-size: 15px;
+            }
+            .founder-premium .founder-info .founder-bio {
+                font-size: 14px;
+            }
+            .hero-dark {
+                padding: 64px 16px;
+            }
+            .footer-dark {
+                padding: 32px 16px;
+            }
+            .footer-dark .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .header .brand {
+                font-size: 18px;
+            }
+            .header .brand i {
+                font-size: 24px;
+            }
+            .sub-nav .sub-inner {
+                gap: 16px;
+                font-size: 12px;
+            }
+            .utility-bar {
+                padding: 0 16px;
+                font-size: 11px;
+            }
+            .nav-overlay .nav-links {
+                font-size: 24px;
+            }
+            .display-xl {
+                font-size: 32px;
+            }
+            .display-lg {
+                font-size: 26px;
+            }
+            .heading-xl {
+                font-size: 20px;
+            }
+            .hero-dark .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-dark .hero-text {
+                max-width: 100%;
+            }
+            .hero-dark .hero-text .hero-actions {
+                justify-content: center;
+            }
+            .hero-dark .hero-media {
+                width: 100%;
+                max-width: 560px;
+                margin: 0 auto;
+            }
+            .founder-premium .border-accent {
+                display: none;
+            }
+        }
+        @media (max-width: 480px) {
+            .display-xl {
+                font-size: 28px;
+            }
+            .display-lg {
+                font-size: 22px;
+            }
+            .heading-xl {
+                font-size: 18px;
+            }
+            .hero-dark {
+                padding: 32px 12px;
+            }
+            .hero-dark .hero-text .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-dark .hero-text .hero-actions .btn-primary,
+            .hero-dark .hero-text .hero-actions .btn-outline-dark {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .footer-dark .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .header .brand {
+                font-size: 16px;
+            }
+            .header .brand i {
+                font-size: 20px;
+            }
+            .utility-bar .util-links .divider {
+                display: none;
+            }
+            .utility-bar .util-links {
+                gap: 8px;
+            }
+            .sub-nav .sub-inner {
+                gap: 12px;
+                font-size: 11px;
+            }
+            .nav-overlay .nav-links {
+                font-size: 20px;
+                gap: 16px;
+            }
+            .founder-premium .founder-photo {
+                width: 100px;
+                height: 100px;
+            }
+            .founder-premium .founder-info .founder-name {
+                font-size: 22px;
+            }
+            .founder-premium .founder-info .founder-title {
+                font-size: 13px;
+            }
+            .founder-premium .founder-info .founder-bio {
+                font-size: 13px;
+            }
+            .team-card .team-photo {
+                width: 96px;
+                height: 96px;
+            }
+            .founder-premium {
+                padding: 20px 12px;
+            }
+            .section-header::after {
+                width: 50px;
+            }
+        }
+
+        /* ---- SECTION REVEAL ---- */
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .section-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---- THEME TOGGLE ICONS ---- */
+        .theme-toggle .light-icon,
+        .theme-toggle .dark-icon,
+        .theme-toggle .auto-icon {
+            display: none;
+        }
+        body.light-mode .theme-toggle .light-icon,
+        body.dark-mode .theme-toggle .dark-icon,
+        body:not(.light-mode):not(.dark-mode) .theme-toggle .auto-icon {
+            display: inline-block;
+        }
+        .theme-toggle .auto-icon {
+            display: inline-block;
+        }
+        body.light-mode .theme-toggle .auto-icon,
+        body.dark-mode .theme-toggle .auto-icon {
+            display: none;
+        }
+        body.light-mode .theme-toggle .dark-icon,
+        body.dark-mode .theme-toggle .light-icon {
+            display: none;
+        }
+
+        /* ---- HELPERS ---- */
+        .section-padding {
+            padding: 64px 0;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mb-xl {
+            margin-bottom: 24px;
+        }
+        .mt-xl {
+            margin-top: 24px;
+        }
+        .mb-lg {
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================================================================
+    UTILITY BAR
+    ================================================================ -->
+    <div class="utility-bar">
+        <div class="util-links">
+            <a href="cyber-resilience.html">𝐓𝐄𝐂𝐇  ●</a>
+            <span class="divider">|</span>
+            <a href="security-research.html">𝐂𝐘𝐁𝐄𝐑𝐒𝐄𝐂𝐔𝐑𝐈𝐓𝐘  ●</a>
+            <span class="divider">|</span>
+            <a href="web-engineering.html">𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑𝐈𝐍𝐆</a>
+        </div>
+    </div>
+
+    <!-- ================================================================
+    HEADER
+    ================================================================ -->
+    <header class="header" id="header">
+        <div class="brand">
+            <i class="fa-brands fa-studiovinari"></i>
+            <span><span class="highlight">ANISH</span> <span class="highlight-red">ENTERPRISES</span></span>
+        </div>
+        <div class="controls">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="light-icon"><i class="fas fa-sun"></i></span>
+                <span class="dark-icon"><i class="fas fa-moon"></i></span>
+                <span class="auto-icon"><i class="fas fa-circle-half-stroke"></i></span>
+            </button>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ================================================================
+    NAVIGATION OVERLAY
+    ================================================================ -->
+    <div class="nav-overlay" id="navOverlay">
+        <button class="close-btn" id="closeNavBtn">&times;</button>
+        <div class="nav-links">
+            <a href="philosophy.html">Philosophy</a>
+            <a href="expertise.html">Expertise</a>
+            <a href="projects.html">Projects</a>
+            <a href="mission.html">Mission</a>
+            <a href="ventures.html">Ventures</a>
+            <a href="services.html">Services</a>
+            <a href="review.html">Review</a>
+            <a href="policy.html">Policy</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="btn-primary" style="min-width:auto; padding: 12px 28px; font-size:18px; margin-top:16px;">Contact</a>
+        </div>
+    </div>
+
+    <!-- ================================================================
+    SUB NAV
+    ================================================================ -->
+    <div class="sub-nav">
+        <div class="sub-inner">
+            <a href="cyber-resilience.html">Cyber Resilience</a>
+            <a href="intelligent-systems.html">Intelligent Systems</a>
+            <a href="security-research.html">Security Research</a>
+            <a href="automation.html">Automation</a>
+            <a href="web-engineering.html">Web Engineering</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </div>
+
+    <!-- ================================================================
+    HERO
+    ================================================================ -->
+    <section class="hero-dark section-reveal" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="display-xl">Executive Leadership</div>
+                <div class="heading-lg">Meet the team driving cyber resilience, intelligent systems, and engineering excellence at ANISH ENTERPRISES.</div>
+                <div class="hero-actions">
+                    <a href="#founder" class="btn-primary">Meet the Founder</a>
+                    <a href="#team" class="btn-outline-dark">Executive Team</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Leadership" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+    FOUNDER — PREMIUM SECTION
+    ================================================================ -->
+    <section class="section-padding section-reveal" id="founder" style="background:var(--surface-soft);">
+        <div class="container">
+            <div class="section-header gold">
+                <div class="display-lg" style="font-size:28px; text-transform:uppercase; letter-spacing:2px; color:var(--primary);">
+                    <i class="fas fa-crown" style="color:var(--accent-gold); margin-right:10px;"></i> Founder &amp; CEO
+                </div>
+                <div class="subtitle">Visionary · Architect · Engineer</div>
+            </div>
+
+            <div class="founder-premium">
+                <!-- Decorative accents -->
+                <div class="border-accent tl"></div>
+                <div class="border-accent br"></div>
+                <div class="premium-star">✦ ✦ ✦</div>
+
+                <div class="founder-photo">
+                    <!-- Replace with Anish.png when available -->
+                    <img src="https://ui-avatars.com/api/?name=Anish+Kushwaha&size=160&background=0052ff&color=fff&bold=true&font-size=0.5" alt="Anish Kushwaha" loading="lazy" />
+                </div>
+                <div class="founder-info">
+                    <div class="founder-name">Anish Kushwaha</div>
+                    <div class="founder-title">Founder &amp; Chief Executive Officer</div>
+                    <div class="founder-badge">
+                        <i class="fas fa-star"></i> Visionary Leader
+                    </div>
+                    <div class="founder-bio">
+                        Anish Kushwaha is the visionary force behind ANISH ENTERPRISES. With a deep-rooted passion for cybersecurity, intelligent systems, and software engineering, he founded the company to bridge the gap between theoretical security and real-world resilience. Anish's approach is hands-on — he doesn't just architect systems; he analyzes them, breaks them, and rebuilds them stronger. His work spans custom vulnerability scanners, network enumeration tools, and high-performance web platforms, all built with a security-first mindset. Anish is committed to pushing the boundaries of what's possible in cyber resilience and automation, and his leadership drives the company's mission to deliver technically sound, scalable, and secure digital systems.
+                    </div>
+                    <div class="founder-actions">
+                        <a href="/contact/AnishKushwaha" class="btn-premium">
+                            Full Profile <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://Anish-Kushwaha.online" target="_blank" class="btn-outline-premium">
+                            <i class="fas fa-globe"></i> Anish-Kushwaha.online
+                        </a>
+                        <a href="https://AnishKushwaha.co.in" target="_blank" class="btn-outline-premium">
+                            <i class="fas fa-globe"></i> AnishKushwaha.co.in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+    EXECUTIVE TEAM
+    ================================================================ -->
+    <section class="section-padding section-reveal" id="team" style="background:var(--canvas);">
+        <div class="container">
+            <div class="section-header">
+                <div class="display-lg" style="font-size:30px;">Executive Team</div>
+                <div class="subtitle">Leadership driving innovation and resilience</div>
+            </div>
+
+            <div class="team-grid">
+
+                <!-- Priyanshi Bairagi -->
+                <a class="team-card corner-top-left corner-gold" href="/contact/PriyanshiBairagi">
+                    <div class="corner-badge gold"></div>
+                    <div class="team-photo">
+                        <img src="https://ui-avatars.com/api/?name=Priyanshi+Bairagi&size=120&background=00bcd4&color=fff&bold=true&font-size=0.5" alt="Priyanshi Bairagi" loading="lazy" />
+                    </div>
+                    <div class="team-name">Priyanshi Bairagi</div>
+                    <div class="team-title">Asst.CEO &amp; Deputy Chairperson</div>
+                    <div class="team-bio">
+                        Acts as proxy to the CEO. Assists in all strategic and operational affairs. Handles all CEO responsibilities in his absence. Deputy Chairperson to the Board, ensuring governance continuity.
+                    </div>
+                    <span class="team-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Bhavya Pandey -->
+                <a class="team-card corner-top-left corner-red" href="/contact/BhavyaPandey">
+                    <div class="corner-badge red"></div>
+                    <div class="team-photo">
+                        <img src="https://ui-avatars.com/api/?name=Bhavya+Pandey&size=120&background=cf202f&color=fff&bold=true&font-size=0.5" alt="Bhavya Pandey" loading="lazy" />
+                    </div>
+                    <div class="team-name">Bhavya Pandey</div>
+                    <div class="team-title">Managing Director (MD)</div>
+                    <div class="team-bio">
+                        Manages all Administrative and Management Affairs. Plays the leading role in Managing ANISH ENTERPRISES — ensuring operational excellence, strategic growth, and seamless coordination across departments.
+                    </div>
+                    <span class="team-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Shubham Kushwaha (COO) -->
+                <a class="team-card corner-top-left corner-cyan" href="/contact/ShubhamKushwaha">
+                    <div class="corner-badge cyan"></div>
+                    <div class="team-photo">
+                        <img src="https://ui-avatars.com/api/?name=Shubham+Kushwaha&size=120&background=0052ff&color=fff&bold=true&font-size=0.5" alt="Shubham Kushwaha" loading="lazy" />
+                    </div>
+                    <div class="team-name">Shubham Kushwaha</div>
+                    <div class="team-title">Chief Operating Officer (COO)</div>
+                    <div class="team-bio">
+                        Responsible for managing the day-to-day operations of ANISH ENTERPRISES, ensuring smooth execution of projects across cybersecurity, automation, and development. Coordinates teams, optimizes workflows, and maintains efficiency, quality, and timely delivery.
+                    </div>
+                    <span class="team-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Ankit Mahato (CSO) -->
+                <a class="team-card corner-top-left" href="/contact/AnkitMahato">
+                    <div class="team-photo">
+                        <img src="https://ui-avatars.com/api/?name=Ankit+Mahato&size=120&background=f4b000&color=000&bold=true&font-size=0.5" alt="Ankit Mahato" loading="lazy" />
+                    </div>
+                    <div class="team-name">Ankit Mahato</div>
+                    <div class="team-title">Chief Strategy Officer (CSO)</div>
+                    <div class="team-bio">
+                        IMO, IOQM, RMO Qualified. Manages all strategic planning and growth initiatives. Drives long-term vision, partnerships, and competitive positioning for ANISH ENTERPRISES.
+                    </div>
+                    <span class="team-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Saksham Dwivedi (CFO) -->
+                <a class="team-card corner-top-left" href="/contact/SakshamDwivedi">
+                    <div class="team-photo">
+                        <img src="https://ui-avatars.com/api/?name=Saksham+Dwivedi&size=120&background=2a7d3b&color=fff&bold=true&font-size=0.5" alt="Saksham Dwivedi" loading="lazy" />
+                    </div>
+                    <div class="team-name">Saksham Dwivedi</div>
+                    <div class="team-title">Chief Financial Officer (CFO)</div>
+                    <div class="team-bio">
+                        Responsible for managing capital, mitigating financial risk, and ensuring regulatory compliance. Oversees all financial operations and strategic investment decisions.
+                    </div>
+                    <span class="team-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Yesh Dwivedi (CTO) -->
+                <a class="team-card corner-top-left" href="/contact/YeshDwivedi">
+                    <div class="team-photo">
+                        <img src="https://ui-avatars.com/api/?name=Yesh+Dwivedi&size=120&background=7b2fbe&color=fff&bold=true&font-size=0.5" alt="Yesh Dwivedi" loading="lazy" />
+                    </div>
+                    <div class="team-name">Yesh Dwivedi</div>
+                    <div class="team-title">Chief Technology Officer (CTO)</div>
+                    <div class="team-bio">
+                        Responsible for the tools, architecture, and engineering that drive business growth. Leads technology strategy, innovation, and the development of intelligent systems.
+                    </div>
+                    <span class="team-link">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+    CTA — CONNECT
+    ================================================================ -->
+    <section class="cta-dark section-reveal" id="connect">
+        <div class="container">
+            <div class="heading-xl">Connect With Our Leadership</div>
+            <div class="body-md">
+                Whether you're looking to partner, invest, or explore opportunities — our executive team is ready to engage.
+                <br />
+                Reach out to the right leader for your inquiry.
+            </div>
+            <div style="margin-top: 24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+                <a href="mailto:anish@anishenterprises.com" class="btn-primary">Email the CEO</a>
+                <a href="/contact/AnishKushwaha" class="btn-outline-dark">Founder's Profile</a>
+                <a href="mailto:executive@anishenterprises.com" class="btn-outline-dark">Executive Office</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+    FOOTER
+    ================================================================ -->
+    <footer class="footer-dark" id="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="heading-sm">ANISH ENTERPRISES</div>
+                <a href="about.html">About</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="mission.html">Mission</a>
+                <a href="vision.html">Vision</a>
+                <a href="policy.html">Policy</a>
+            </div>
+            <div class="footer-col">
+                <div class="heading-sm">Expertise</div>
+                <a href="cybersecurity.html">Cybersecurity</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="network-scanning.html">Network Scanning</a>
+                <a href="automation.html">Automation</a>
+            </div>
+            <div class="footer-col">
+                <div class="heading-sm">Projects</div>
+                <a href="vulnerability-scanners.html">Vulnerability Scanners</a>
+                <a href="exploitation-pipelines.html">Exploitation Pipelines</a>
+                <a href="secure-platforms.html">Secure Platforms</a>
+                <a href="research.html">Research</a>
+            </div>
+            <div class="footer-col">
+                <div class="heading-sm">Connect</div>
+                <a href="github.html">GitHub</a>
+                <a href="linkedin.html">LinkedIn</a>
+                <a href="twitter.html">Twitter</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="utility-xs">&copy; 2026 ANISH ENTERPRISES — Cyber Resilience &amp; Intelligent Systems</span>
+            <div class="socials">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================================================
+    JAVASCRIPT
+    ================================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // --- Theme toggle ---
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            let currentTheme = localStorage.getItem('theme') || 'auto';
+            applyTheme(currentTheme);
+
+            function applyTheme(theme) {
+                body.classList.remove('light-mode', 'dark-mode');
+                if (theme === 'light') {
+                    body.classList.add('light-mode');
+                } else if (theme === 'dark') {
+                    body.classList.add('dark-mode');
+                }
+                localStorage.setItem('theme', theme);
+                currentTheme = theme;
+            }
+
+            themeToggle.addEventListener('click', function() {
+                let nextTheme;
+                if (currentTheme === 'light') nextTheme = 'dark';
+                else if (currentTheme === 'dark') nextTheme = 'auto';
+                else nextTheme = 'light';
+                applyTheme(nextTheme);
+            });
+
+            // --- Navigation overlay ---
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navOverlay = document.getElementById('navOverlay');
+            const closeNavBtn = document.getElementById('closeNavBtn');
+
+            function openNav() {
+                navOverlay.classList.add('open');
+            }
+
+            function closeNav() {
+                navOverlay.classList.remove('open');
+            }
+
+            hamburger.addEventListener('click', openNav);
+            closeNavBtn.addEventListener('click', closeNav);
+            navOverlay.addEventListener('click', function(e) {
+                if (e.target === navOverlay) closeNav();
+            });
+            navOverlay.querySelectorAll('.nav-links a').forEach(function(link) {
+                link.addEventListener('click', closeNav);
+            });
+
+            // --- Section reveal ---
+            const revealEls = document.querySelectorAll('.section-reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
+                revealEls.forEach(function(el) {
+                    observer.observe(el);
+                });
+                setTimeout(function() {
+                    revealEls.forEach(function(el) {
+                        if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                            el.classList.add('visible');
+                        }
+                    });
+                }, 300);
+            } else {
+                revealEls.forEach(function(el) { el.classList.add('visible'); });
+            }
+
+            // --- Sub-nav active ---
+            const subLinks = document.querySelectorAll('.sub-nav .sub-inner a');
+            subLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    subLinks.forEach(function(l) { l.classList.remove('active'); });
+                    link.classList.add('active');
+                });
+            });
+
+        })();
+    </script>
+
+</body>
+  </html>
