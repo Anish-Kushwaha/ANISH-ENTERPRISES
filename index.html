@@ -23,73 +23,61 @@
   <meta name="twitter:title" content="ANISH ENTERPRISES — Cybersecurity &amp; Automation">
   <meta name="twitter:description" content="Cybersecurity • Automation • Advanced System Development">
   <meta name="twitter:image" content="https://AnishKushwaha.co.in/Anish-Logo.png">
-
   <style>
     :root{--primary:#0052ff;--primary-dark:#003ecc;--secondary:#cf202f;--gold:#f4b000;--cyan:#00bcd4;--ink:#111;--canvas:#fff;--soft:#f6f7f9;--line:#d5d8de;--body:#30343b;--mute:#6f7580}
     body.dark-mode{--primary:#4d8aff;--primary-dark:#3a6fd6;--secondary:#e53e4e;--gold:#f7c948;--cyan:#4dd0e1;--ink:#fff;--canvas:#0a0b0d;--soft:#1a1c22;--line:#3a3f48;--body:#d0d4dc;--mute:#9aa0aa}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-    body{font-family:Inter,Arial,sans-serif;background:var(--canvas);color:var(--ink);line-height:1.5;min-height:100vh;transition:background .25s,color .25s}
-    a{text-decoration:none;color:inherit}button{font:inherit}img{max-width:100%;display:block}.container{width:min(1280px,100%);margin:auto;padding:0 24px}
-    .utility-bar{height:32px;background:#000;color:#fff;display:flex;align-items:center;justify-content:flex-end;padding:0 24px;font-size:12px}.util-links{display:flex;gap:16px}.util-links a{color:#ddd}
-    .header{height:64px;background:var(--canvas);border-bottom:1px solid var(--line);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}.brand{font-size:20px;font-weight:800}.brand .blue{color:var(--primary)}.brand .red{color:var(--secondary)}.controls{display:flex;gap:10px}.icon-btn{width:40px;height:40px;border:0;background:transparent;color:var(--ink);cursor:pointer;border-radius:4px}.icon-btn:hover{background:var(--soft)}
+    @media(prefers-color-scheme:dark){body:not(.light-mode):not(.dark-mode){--primary:#4d8aff;--primary-dark:#3a6fd6;--secondary:#e53e4e;--gold:#f7c948;--cyan:#4dd0e1;--ink:#fff;--canvas:#0a0b0d;--soft:#1a1c22;--line:#3a3f48;--body:#d0d4dc;--mute:#9aa0aa}}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{font-family:Inter,Arial,sans-serif;background:var(--canvas);color:var(--ink);line-height:1.5;min-height:100vh;transition:background .25s,color .25s}a{text-decoration:none;color:inherit}button{font:inherit}img{max-width:100%;display:block}.container{width:min(1280px,100%);margin:auto;padding:0 24px}
+    .utility-bar{height:32px;background:#000;color:#fff;display:flex;align-items:center;justify-content:flex-end;padding:0 24px;font-size:12px}.util-links{display:flex;gap:16px}.util-links a{color:#ddd}.header{height:64px;background:var(--canvas);border-bottom:1px solid var(--line);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}.brand{font-size:20px;font-weight:800}.brand .blue{color:var(--primary)}.brand .red{color:var(--secondary)}.controls{display:flex;gap:10px}.icon-btn{width:40px;height:40px;border:0;background:transparent;color:var(--ink);cursor:pointer;border-radius:4px}.icon-btn:hover{background:var(--soft)}
     .nav-overlay{position:fixed;inset:0;background:rgba(255,255,255,.98);z-index:1100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:.25s}.dark-mode .nav-overlay{background:rgba(10,11,13,.98)}.nav-overlay.open{opacity:1;visibility:visible;pointer-events:auto}.nav-links{display:flex;flex-direction:column;align-items:center;gap:18px;font-size:25px;font-weight:700}.nav-links a:hover{color:var(--primary)}.close-btn{position:absolute;top:20px;right:24px;border:0;background:transparent;color:var(--ink);font-size:38px;cursor:pointer}
     .sub-nav{background:var(--soft);border-bottom:1px solid var(--line);overflow:auto}.sub-inner{height:48px;display:flex;align-items:center;gap:24px;white-space:nowrap}.sub-inner a{font-size:13px;font-weight:700;text-transform:uppercase;color:var(--mute);padding:4px 0;border-bottom:2px solid transparent}.sub-inner a.active,.sub-inner a:hover{color:var(--ink);border-color:var(--primary)}
     .hero{position:relative;overflow:hidden;background:#000;color:#fff;padding:80px 48px}.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.88),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600&amp;q=80') center/cover;opacity:.9}.hero-content{position:relative;z-index:1;width:min(1280px,100%);margin:auto;display:flex;align-items:center;gap:32px}.hero-text,.hero-media{flex:1}.hero-text{max-width:600px}.display-xl{font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.12;margin-bottom:18px}.lead{font-size:clamp(18px,2.2vw,22px);color:rgba(255,255,255,.76);margin-bottom:26px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 24px;border-radius:3px;font-weight:700;cursor:pointer}.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark)}.btn-outline{border:1px solid #fff;color:#fff}.btn-outline:hover{background:rgba(255,255,255,.1)}.hero-media{aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:#17191d}.hero-media img{width:100%;height:100%;object-fit:cover}
-    section{padding:64px 0}.section-title{text-align:center;font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:28px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.card{background:var(--canvas);border:1px solid var(--line);padding:24px;border-radius:3px;position:relative;overflow:hidden}.card:hover{border-color:var(--primary)}.card-icon{font-size:28px;color:var(--primary);margin-bottom:10px}.card h3{font-size:20px;margin-bottom:6px}.card p{color:var(--body)}.product-img{aspect-ratio:16/9;overflow:hidden;margin-bottom:14px;background:var(--soft)}.product-img img{width:100%;height:100%;object-fit:cover}.section-soft{background:var(--soft)}
-    .cta{background:#000;color:#fff;text-align:center;padding:64px 24px}.cta h2{font-size:28px;margin-bottom:14px}.cta p{max-width:760px;margin:0 auto 24px;color:rgba(255,255,255,.75)}
-    footer{background:#0a0b0d;color:#fff;padding:56px 24px;border-top:2px solid var(--primary)}.footer-grid{width:min(1280px,100%);margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}.footer-col h3{font-size:16px;margin-bottom:10px}.footer-col a{display:block;color:rgba(255,255,255,.8);padding:3px 0}.footer-col a:hover{color:#fff}.footer-bottom{width:min(1280px,100%);margin:30px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:rgba(255,255,255,.6);font-size:12px}.socials{display:flex;gap:20px;font-size:16px}
-    @media(max-width:900px){.hero-content{flex-direction:column;text-align:center}.hero-text{max-width:none}.hero-actions{justify-content:center}.hero-media{width:100%;max-width:600px}.grid-3{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){.utility-bar{padding:0 12px}.header{padding:0 16px}.brand{font-size:17px}.sub-inner{gap:16px;padding:0 16px}.hero{padding:56px 16px}.grid-3,.grid-2{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
-    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+    section{padding:64px 0}.section-title{text-align:center;font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:28px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.card{background:var(--canvas);border:1px solid var(--line);padding:24px;border-radius:3px;position:relative;overflow:hidden}.card:hover{border-color:var(--primary)}.card-icon{font-size:28px;color:var(--primary);margin-bottom:10px}.card h3{font-size:20px;margin-bottom:6px}.card p{color:var(--body)}.product-img{aspect-ratio:16/9;overflow:hidden;margin-bottom:14px;background:var(--soft)}.product-img img{width:100%;height:100%;object-fit:cover}.section-soft{background:var(--soft)}.cta{background:#000;color:#fff;text-align:center;padding:64px 24px}.cta h2{font-size:28px;margin-bottom:14px}.cta p{max-width:760px;margin:0 auto 24px;color:rgba(255,255,255,.75)}footer{background:#0a0b0d;color:#fff;padding:56px 24px;border-top:2px solid var(--primary)}.footer-grid{width:min(1280px,100%);margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}.footer-col h3{font-size:16px;margin-bottom:10px}.footer-col a{display:block;color:rgba(255,255,255,.8);padding:3px 0}.footer-col a:hover{color:#fff}.footer-bottom{width:min(1280px,100%);margin:30px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:rgba(255,255,255,.6);font-size:12px}.socials{display:flex;gap:20px;font-size:16px}
+    @media(max-width:900px){.hero-content{flex-direction:column;text-align:center}.hero-text{max-width:none}.hero-actions{justify-content:center}.hero-media{width:100%;max-width:600px}.grid-3{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.utility-bar{padding:0 12px}.header{padding:0 16px}.brand{font-size:17px}.sub-inner{gap:16px;padding:0 16px}.hero{padding:56px 16px}.grid-3,.grid-2{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
   <div class="utility-bar"><div class="util-links"><a href="cyber-resilience.html">TECH ●</a><span>|</span><a href="security-research.html">CYBERSECURITY ●</a><span>|</span><a href="web-engineering.html">ENGINEERING</a></div></div>
-
-  <header class="header">
-    <div class="brand"><span class="blue">ANISH</span>&nbsp;<span class="red">ENTERPRISES</span></div>
-    <div class="controls"><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke"></i></button><button class="icon-btn" id="hamburgerBtn" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button></div>
-  </header>
-
+  <header class="header"><div class="brand"><span class="blue">ANISH</span>&nbsp;<span class="red">ENTERPRISES</span></div><div class="controls"><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke"></i></button><button class="icon-btn" id="hamburgerBtn" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button></div></header>
   <div class="nav-overlay" id="navOverlay"><button class="close-btn" id="closeNavBtn" aria-label="Close navigation">&times;</button><nav class="nav-links"><a href="philosophy.html">Philosophy</a><a href="expertise.html">Expertise</a><a href="projects.html">Projects</a><a href="mission.html">Mission</a><a href="ventures.html">Ventures</a><a href="services.html">Services</a><a href="review.html">Review</a><a href="policy.html">Policy</a><a href="contact.html">Contact</a><a href="about.html">About</a></nav></div>
-
   <nav class="sub-nav"><div class="container sub-inner"><a class="active" href="cyber-resilience.html">Cyber Resilience</a><a href="intelligent-systems.html">Intelligent Systems</a><a href="security-research.html">Security Research</a><a href="automation.html">Automation</a><a href="web-engineering.html">Web Engineering</a></div></nav>
-
   <main>
     <section class="hero" id="hero"><div class="hero-bg" aria-hidden="true"></div><div class="hero-content"><div class="hero-text"><div class="display-xl">Cyber Resilience &amp; Intelligent Systems</div><p class="lead">We don't follow systems — we analyze them, break them, and rebuild them stronger.</p><div class="hero-actions"><a class="btn btn-primary" href="projects.html">Explore Work</a><a class="btn btn-outline" href="mission.html">Our Mission</a></div></div><div class="hero-media"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&amp;q=80" alt="Cyber Resilience" loading="eager"></div></div></section>
-
     <section id="philosophy"><div class="container"><h2 class="section-title">Core Philosophy</h2><div class="grid-3"><a class="card" href="security-centric-development.html"><div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Security-Centric Development</h3><p>Systems designed to withstand real-world attack vectors, built with resilience from the ground up.</p></a><a class="card" href="deep-technical-understanding.html"><div class="card-icon" style="color:var(--secondary)"><i class="fa-solid fa-microchip"></i></div><h3>Deep Technical Understanding</h3><p>Focus on how systems function internally — not just what they do, but how they break.</p></a><a class="card" href="experimental-engineering.html"><div class="card-icon" style="color:var(--gold)"><i class="fa-solid fa-flask"></i></div><h3>Experimental Engineering</h3><p>Building, testing, breaking, and improving continuously. Every failure is a step toward mastery.</p></a></div></div></section>
-
     <section class="section-soft" id="expertise"><div class="container"><h2 class="section-title">Domains of Expertise</h2><div class="grid-3"><article class="card"><div class="product-img"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&amp;q=80" alt="Cybersecurity" loading="lazy"></div><h3>Cybersecurity &amp; Vulnerability Analysis</h3><p>Custom vulnerability scanners, network enumeration, and exploit workflow design.</p></article><article class="card"><div class="product-img"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&amp;q=80" alt="Software Development" loading="lazy"></div><h3>Advanced Software &amp; Web Development</h3><p>High-performance web platforms, automation systems, and intelligent tooling.</p></article><article class="card"><div class="product-img"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&amp;q=80" alt="Network Scanning" loading="lazy"></div><h3>Network Scanning &amp; System Enumeration</h3><p>Low-level socket programming, banner analysis, and infrastructure mapping.</p></article></div></div></section>
-
     <section id="projects"><div class="container"><h2 class="section-title">What Defines Our Work</h2><div class="grid-2"><a class="card" href="custom-vulnerability-scanners.html"><div class="card-icon" style="color:var(--secondary)"><i class="fa-solid fa-bug"></i></div><h3>Custom Vulnerability Scanners</h3><p>Development of scanners capable of identifying weaknesses in web infrastructures with precision.</p></a><a class="card" href="network-scanning-systems.html"><div class="card-icon" style="color:var(--cyan)"><i class="fa-solid fa-network-wired"></i></div><h3>Network Scanning Systems</h3><p>Inspired by Nmap, using low-level socket programming and banner analysis for deep enumeration.</p></a><a class="card" href="automated-exploitation-workflows.html"><div class="card-icon" style="color:var(--gold)"><i class="fa-solid fa-robot"></i></div><h3>Automated Exploitation Workflows</h3><p>Integrating scanning, detection, and action into a single intelligent pipeline.</p></a><a class="card" href="secure-web-platforms.html"><div class="card-icon"><i class="fa-solid fa-globe"></i></div><h3>Secure Web Platforms</h3><p>Building digital systems with a focus on performance, structure, and security from the ground up.</p></a></div></div></section>
-
     <section class="cta" id="mission"><div class="container"><h2>Mission &amp; Vision</h2><p><strong>Mission:</strong> To build and deliver technically sound, secure, and scalable digital systems that reflect real-world reliability while advancing knowledge in cybersecurity, automation, and software development.<br><br><strong>Vision:</strong> To evolve ANISH ENTERPRISES into a recognized force in cybersecurity innovation and advanced system development.</p><a class="btn btn-primary" href="contact.html">Contact Us</a></div></section>
   </main>
-
   <footer><div class="footer-grid"><div class="footer-col"><h3>ANISH ENTERPRISES</h3><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="mission.html">Mission</a><a href="vision.html">Vision</a><a href="policy.html">Policy</a></div><div class="footer-col"><h3>Expertise</h3><a href="cybersecurity.html">Cybersecurity</a><a href="web-development.html">Web Development</a><a href="network-scanning.html">Network Scanning</a><a href="automation.html">Automation</a></div><div class="footer-col"><h3>Projects</h3><a href="vulnerability-scanners.html">Vulnerability Scanners</a><a href="exploitation-pipelines.html">Exploitation Pipelines</a><a href="secure-platforms.html">Secure Platforms</a><a href="research.html">Research</a></div><div class="footer-col"><h3>Connect</h3><a href="github.html">GitHub</a><a href="linkedin.html">LinkedIn</a><a href="twitter.html">Twitter</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>&copy; 2026 ANISH ENTERPRISES — Cyber Resilience &amp; Intelligent Systems</span><div class="socials"><a href="github.html" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="linkedin.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="twitter.html" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div></div></footer>
-
   <script>
     (function(){
       'use strict';
-      var body=document.body;
-      var toggle=document.getElementById('themeToggle');
-      var menu=document.getElementById('hamburgerBtn');
-      var overlay=document.getElementById('navOverlay');
-      var close=document.getElementById('closeNavBtn');
-      try{
-        var theme=localStorage.getItem('theme')||'auto';
+      var body=document.body, toggle=document.getElementById('themeToggle'), menu=document.getElementById('hamburgerBtn'), overlay=document.getElementById('navOverlay'), close=document.getElementById('closeNavBtn');
+      var media=window.matchMedia('(prefers-color-scheme: dark)');
+      function applyTheme(theme){
+        body.classList.remove('dark-mode','light-mode');
         if(theme==='dark') body.classList.add('dark-mode');
         if(theme==='light') body.classList.add('light-mode');
-        toggle.addEventListener('click',function(){
-          var next=body.classList.contains('dark-mode')?'light':body.classList.contains('light-mode')?'auto':'dark';
-          body.classList.remove('dark-mode','light-mode');
-          if(next==='dark') body.classList.add('dark-mode');
-          if(next==='light') body.classList.add('light-mode');
-          try{localStorage.setItem('theme',next)}catch(e){}
-        });
-      }catch(e){}
+        updateThemeIcon(theme);
+      }
+      function updateThemeIcon(theme){
+        var icon=toggle.querySelector('i');
+        if(theme==='dark') icon.className='fa-solid fa-moon';
+        else if(theme==='light') icon.className='fa-solid fa-sun';
+        else icon.className='fa-solid fa-circle-half-stroke';
+        toggle.setAttribute('title',theme==='auto'?'Automatic theme (system)':theme==='dark'?'Dark theme':'Light theme');
+        toggle.setAttribute('aria-label',toggle.getAttribute('title'));
+      }
+      var theme='auto';
+      try{theme=localStorage.getItem('theme')||'auto';}catch(e){}
+      applyTheme(theme);
+      toggle.addEventListener('click',function(){
+        theme=theme==='auto'?'dark':theme==='dark'?'light':'auto';
+        applyTheme(theme);
+        try{localStorage.setItem('theme',theme);}catch(e){}
+      });
+      function systemThemeChanged(){if(theme==='auto') applyTheme('auto');}
+      if(media.addEventListener) media.addEventListener('change',systemThemeChanged); else if(media.addListener) media.addListener(systemThemeChanged);
       menu.addEventListener('click',function(){overlay.classList.add('open')});
       close.addEventListener('click',function(){overlay.classList.remove('open')});
       overlay.addEventListener('click',function(e){if(e.target===overlay) overlay.classList.remove('open')});
